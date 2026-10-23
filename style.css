@@ -870,6 +870,16 @@ ul { list-style: none; }
 }
 .contact-item-text { font-size: 0.9rem; color: var(--muted); }
 .contact-item-text strong { color: var(--white); display: block; margin-bottom: 2px; }
+.contact-item-text a {
+  color: var(--indigo);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition), text-decoration var(--transition);
+}
+.contact-item-text a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
 .contact-form {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
