@@ -162,7 +162,7 @@ ul { list-style: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 16px 0;
+  padding: 8px 0;
   transition: background var(--transition), padding var(--transition), border-color var(--transition);
 }
 #navbar.scrolled {
@@ -170,7 +170,11 @@ ul { list-style: none; }
   backdrop-filter: blur(20px) saturate(1.6);
   -webkit-backdrop-filter: blur(20px) saturate(1.6);
   border-bottom: 1px solid rgba(99,102,241,0.12);
-  padding: 10px 0;
+  padding: 6px 0;
+}
+#navbar .container {
+  max-width: 100%;
+  padding: 0 44px;
 }
 .nav-inner {
   display: flex;
@@ -183,13 +187,13 @@ ul { list-style: none; }
   text-decoration: none;
 }
 .nav-logo-img {
-  height: 50px;
+  height: 78px;
   width: auto;
   display: block;
   transition: height var(--transition), transform var(--transition), filter var(--transition);
 }
 #navbar.scrolled .nav-logo-img {
-  height: 44px;
+  height: 64px;
 }
 .nav-logo:hover .nav-logo-img {
   transform: translateY(-1px) scale(1.02);
@@ -928,7 +932,7 @@ footer {
   margin-bottom: 16px;
 }
 .footer-logo-img {
-  height: 52px;
+  height: 78px;
   width: auto;
   display: block;
   transition: transform var(--transition), filter var(--transition);
@@ -989,12 +993,15 @@ footer {
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  #navbar .container { padding: 0 28px; }
+  .nav-logo-img { height: 64px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .market-grid   { grid-template-columns: repeat(2, 1fr); }
   .footer-grid   { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
-  .nav-logo-img { height: 42px; }
+  #navbar .container { padding: 0 20px; }
+  .nav-logo-img { height: 52px; }
   .nav-links  { display: none; }
   .hamburger  { display: flex; }
   .about-grid { grid-template-columns: 1fr; }
@@ -1010,8 +1017,8 @@ footer {
   .hero-stats { gap: 28px; padding-top: 32px; }
 }
 @media (max-width: 480px) {
-  .nav-logo-img { height: 38px; }
-  .footer-logo-img { height: 44px; }
+  .nav-logo-img { height: 46px; }
+  .footer-logo-img { height: 56px; }
   .section { padding: 72px 0; }
   .market-grid { grid-template-columns: 1fr; }
   .hero-stats { gap: 20px; }
