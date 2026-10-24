@@ -1,0 +1,477 @@
+<?php
+/**
+ * The Front Page template for RMS Premier Services Theme
+ *
+ * @package RMS_Premier_Services
+ * @version 1.0.0
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+get_header();
+$contact_email = rms_get_contact_email();
+?>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          PMP-Certified · HIPAA-Compliant · Scalable
+        </div>
+        <h1 class="hero-title">
+          Modern Consulting for <span class="accent">Healthcare</span> &amp; <span class="gold">Technology</span>
+        </h1>
+        <p class="hero-desc">
+          RMS Premier Services delivers expert Business, Healthcare &amp; IT Project Management—without the overhead of traditional consulting firms. Flexible, fast, and built for your growth.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book a Consultation ↗</a>
+          <a href="#services" class="btn btn-outline">Explore Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">PMP</div>
+            <div class="label">Certified Expertise</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">3+</div>
+            <div class="label">Industries Served</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">HIPAA</div>
+            <div class="label">Compliant Planning</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">Low</div>
+            <div class="label">Overhead Model</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ ABOUT ══════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="tag">About Us</span>
+          <h2 class="section-title">A Smarter Way to <span>Manage Projects</span></h2>
+          <blockquote class="mission">
+            "Help small businesses, healthcare, and technology organizations deliver compliant, efficient, and scalable projects—without hiring full-time project managers."
+          </blockquote>
+          <p style="color:var(--gray-light); font-size:0.95rem; margin-bottom:32px;">
+            RMS Premier Services is a low-overhead consulting firm that brings PMP-certified expertise directly to small businesses, health clinics, telehealth startups, and tech companies. We move fast, cut through bureaucracy, and get results.
+          </p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">🏥</div>
+              <h4>Healthcare IT</h4>
+              <p>EHR/EMR setup, HIPAA compliance, workflow design</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">📋</div>
+              <h4>Project Management</h4>
+              <p>PMP-certified planning, Agile/Scrum facilitation</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">⚙️</div>
+              <h4>Business Processes</h4>
+              <p>SOP creation, workflow optimization, onboarding</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🔒</div>
+              <h4>Compliance</h4>
+              <p>HIPAA readiness, risk assessments, audit prep</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="about-card-wrap">
+            <div class="stat-card featured">
+              <div class="big-num">PMP</div>
+              <div class="big-label">Project Management Professional Certification — the gold standard in project delivery</div>
+            </div>
+            <div class="stat-card">
+              <div class="big-num" style="color:var(--gold)">HIPAA</div>
+              <div class="big-label">Compliant Planning &amp; Execution</div>
+            </div>
+            <div class="stat-card">
+              <div class="big-num">3×</div>
+              <div class="big-label">Industries: Business · Healthcare · IT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ SERVICES ══════════════════ -->
+  <section id="services" class="section section--alt">
+    <div class="container">
+      <div class="reveal">
+        <span class="tag">Core Services</span>
+        <h2 class="section-title">Everything You Need to <span>Deliver Projects Right</span></h2>
+        <p class="section-sub">From compliance-ready planning to EHR implementation, we cover every stage of your project lifecycle.</p>
+      </div>
+
+      <div class="services-tabs reveal">
+        <button class="tab-btn active" id="tab-all"        onclick="filterServices('all')">All Services</button>
+        <button class="tab-btn"        id="tab-healthcare" onclick="filterServices('healthcare')">Healthcare IT</button>
+        <button class="tab-btn"        id="tab-business"   onclick="filterServices('business')">Business</button>
+        <button class="tab-btn"        id="tab-rfp"        onclick="filterServices('rfp')">RFP &amp; Proposals</button>
+      </div>
+
+      <div class="services-grid reveal" id="servicesGrid">
+
+        <div class="service-card" data-cat="healthcare business">
+          <div class="service-icon">🏗️</div>
+          <h3>Project Management Consulting</h3>
+          <p>End-to-end project planning, execution, and delivery across healthcare, business, and technology domains.</p>
+          <ul class="service-list">
+            <li>Feasibility Studies</li>
+            <li>Business Process Design</li>
+            <li>Risk Assessments</li>
+            <li>Dashboard Reporting</li>
+            <li>Vendor Coordination</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-cat="healthcare">
+          <div class="service-icon">🏥</div>
+          <h3>Healthcare IT &amp; EHR/EMR</h3>
+          <p>Expert EHR/EMR setup, implementation support, and staff training to modernize your clinical operations.</p>
+          <ul class="service-list">
+            <li>EHR/EMR Setup &amp; Implementation</li>
+            <li>Staff Training Programs</li>
+            <li>Intake, Billing &amp; Scheduling</li>
+            <li>HIPAA-Compliant Planning</li>
+            <li>Compliance Readiness Assessments</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-cat="business">
+          <div class="service-icon">📄</div>
+          <h3>Technical Writing &amp; SOPs</h3>
+          <p>Freelance technical writing and professionally crafted Standard Operating Procedures tailored for your team.</p>
+          <ul class="service-list">
+            <li>SOP Bundle Creation</li>
+            <li>Audit Preparation Documentation</li>
+            <li>Staff Onboarding Processes</li>
+            <li>Process Documentation</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-cat="business healthcare">
+          <div class="service-icon">⚡</div>
+          <h3>Workflow Optimization</h3>
+          <p>Identify inefficiencies and redesign workflows to improve speed, compliance, and team performance.</p>
+          <ul class="service-list">
+            <li>New Workflow Design</li>
+            <li>Identify Inefficiencies</li>
+            <li>Compliance Coordination</li>
+            <li>Cross-Team Alignment</li>
+            <li>Agile/Scrum Facilitation</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-cat="rfp">
+          <div class="service-icon">📝</div>
+          <h3>RFP &amp; Proposal Writing</h3>
+          <p>Winning proposals for healthcare IT, government contracts, and hospital submissions backed by PM expertise.</p>
+          <ul class="service-list">
+            <li>Healthcare IT Proposals</li>
+            <li>Government Contract Submissions</li>
+            <li>Hospital Contract Bids</li>
+            <li>Technical + PM Documentation</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-cat="business healthcare">
+          <div class="service-icon">🗄️</div>
+          <h3>Database &amp; Reporting</h3>
+          <p>MS Access database development and custom dashboard reporting to keep your data organized and actionable.</p>
+          <ul class="service-list">
+            <li>MS Access Database Development</li>
+            <li>Dashboard Reporting</li>
+            <li>Data Management Systems</li>
+            <li>Product Launch Management</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ WHY US ══════════════════ -->
+  <section id="why" class="section">
+    <div class="container">
+      <div class="reveal">
+        <span class="tag">Why RMS Premier</span>
+        <h2 class="section-title">The <span>Competitive Edge</span> You've Been Missing</h2>
+        <p class="section-sub">We combine certified expertise with flexibility and speed—delivering big-firm results at a fraction of the cost.</p>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <div class="why-body">
+            <h4>PMP-Certified Expertise</h4>
+            <p>Every engagement is led by a Project Management Professional—the globally recognized gold standard for project delivery excellence.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <div class="why-body">
+            <h4>Niche Industry Focus</h4>
+            <p>Deep expertise in small business, healthcare IT, and technology means we speak your language and understand your specific challenges from day one.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <div class="why-body">
+            <h4>Low-Cost Alternative</h4>
+            <p>Access top-tier consulting without the bloated overhead of large firms. You pay for expertise and results—not expensive office space and bureaucracy.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <div class="why-body">
+            <h4>Flexible Engagement Models</h4>
+            <p>Whether you need a one-time project, ongoing retainer, or specific deliverable—we adapt to your budget, timeline, and team structure.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-num">05</div>
+          <div class="why-body">
+            <h4>Fast Deployment</h4>
+            <p>No lengthy onboarding or bureaucratic delays. We integrate quickly, assess your needs, and begin delivering value from the very first week.</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-num">06</div>
+          <div class="why-body">
+            <h4>Compliance-First Mindset</h4>
+            <p>HIPAA compliance, regulatory readiness, and audit preparation are baked into every project—not treated as an afterthought.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ TARGET MARKET ══════════════════ -->
+  <section id="market" class="section section--alt">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="tag">Who We Serve</span>
+        <h2 class="section-title">Built for <span>Organizations Like Yours</span></h2>
+        <p class="section-sub" style="margin:0 auto 56px;">We specialize in serving clients who need expert project management without the full-time hire.</p>
+      </div>
+      <div class="market-grid reveal">
+        <div class="market-card">
+          <div class="market-icon">🏢</div>
+          <h3>Small Businesses</h3>
+          <p>Growing organizations that need structured project management to scale efficiently and stay competitive.</p>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">🩺</div>
+          <h3>Private Practices</h3>
+          <p>Medical and specialty practices modernizing operations, implementing EHR systems, and improving patient workflows.</p>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">🏥</div>
+          <h3>Healthcare Organizations</h3>
+          <p>Clinics and health systems navigating HIPAA compliance, technology upgrades, and operational improvements.</p>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">💻</div>
+          <h3>Telehealth Startups</h3>
+          <p>Digital health companies building compliant, scalable products and processes from the ground up.</p>
+        </div>
+      </div>
+
+      <!-- Pain Points -->
+      <div class="reveal" style="margin-top:56px;">
+        <h3 style="font-family:'Outfit',sans-serif; font-size:1.4rem; font-weight:700; color:var(--white); text-align:center; margin-bottom:32px;">Sound Familiar? We Solve These Every Day.</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
+          <div style="background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:20px 24px; display:flex; align-items:center; gap:14px;">
+            <span style="font-size:1.5rem;">😓</span>
+            <span style="font-size:0.9rem; color:var(--gray-light);">No structured project management in place</span>
+          </div>
+          <div style="background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:20px 24px; display:flex; align-items:center; gap:14px;">
+            <span style="font-size:1.5rem;">🔎</span>
+            <span style="font-size:0.9rem; color:var(--gray-light);">Confusion around HIPAA &amp; compliance requirements</span>
+          </div>
+          <div style="background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:20px 24px; display:flex; align-items:center; gap:14px;">
+            <span style="font-size:1.5rem;">🔄</span>
+            <span style="font-size:0.9rem; color:var(--gray-light);">Inefficient, outdated workflows slowing your team down</span>
+          </div>
+          <div style="background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:20px 24px; display:flex; align-items:center; gap:14px;">
+            <span style="font-size:1.5rem;">💰</span>
+            <span style="font-size:0.9rem; color:var(--gray-light);">Budget too tight for a full-time project manager</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ COURSES ══════════════════ -->
+  <section id="courses" class="section">
+    <div class="container">
+      <div class="reveal">
+        <span class="tag">Online Courses &amp; Coaching</span>
+        <h2 class="section-title">Learn from <span>Real-World Experience</span></h2>
+        <p class="section-sub">Practical, PMP-backed courses designed for healthcare and IT professionals ready to level up their project skills.</p>
+      </div>
+      <div class="courses-grid reveal">
+        <div class="course-card">
+          <div class="course-num">01</div>
+          <div class="course-body">
+            <h3>PMP in Healthcare: Real-World Application</h3>
+            <p>Apply PMP methodologies specifically to healthcare environments, compliance constraints, and clinical workflows.</p>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-num">02</div>
+          <div class="course-body">
+            <h3>How to Conduct a Feasibility Study</h3>
+            <p>Step-by-step guidance on assessing project viability, risk, resource requirements, and strategic alignment.</p>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-num">03</div>
+          <div class="course-body">
+            <h3>Developing a Project Schedule</h3>
+            <p>Master scheduling techniques, milestones, dependencies, and critical path planning for on-time delivery.</p>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-num">04</div>
+          <div class="course-body">
+            <h3>How to Manage an EHR Implementation</h3>
+            <p>A complete guide to planning, executing, and training staff through an electronic health records rollout.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delivery Tools -->
+      <div class="reveal" style="margin-top:56px;">
+        <h3 style="font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; color:var(--gray-light); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px;">Delivered Via</h3>
+        <div class="tools-wrap">
+          <div class="tool-badge">🎥 Zoom</div>
+          <div class="tool-badge">💼 Microsoft Teams</div>
+          <div class="tool-badge">📊 Wrike</div>
+          <div class="tool-badge">📈 Smartsheet</div>
+          <div class="tool-badge">🔧 JIRA</div>
+          <div class="tool-badge">⚙️ ServiceNow</div>
+          <div class="tool-badge">▶️ YouTube</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ CONTACT / CONSULTATION ══════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="contact-info reveal">
+          <span class="tag">Get In Touch</span>
+          <h2>Ready to Deliver <span style="color:var(--indigo)">Smarter Projects?</span></h2>
+          <p>Tell us about your organization's needs and we'll put together a flexible engagement plan that works for your team and budget.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div class="contact-item-text">
+                <strong>Email Us</strong>
+                <a href="mailto:<?php echo esc_attr($contact_email); ?>"><?php echo esc_html($contact_email); ?></a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-text">
+                <strong>Location</strong>
+                Available Nationwide · Remote &amp; On-Site
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">⏱️</div>
+              <div class="contact-item-text">
+                <strong>Response Time</strong>
+                Within 24 Business Hours
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <h3 style="font-family:'Outfit',sans-serif; font-size:1.3rem; font-weight:700; color:var(--white); margin-bottom:28px;">Request a Consultation</h3>
+          <form id="contactForm" novalidate>
+            <!-- Anti-Spam Honeypot Field -->
+            <input type="text" name="rms_hp" class="rms-hp" tabindex="-1" autocomplete="off" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="first_name" placeholder="Jane" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="last_name" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="orgType">Organization Type</label>
+              <select id="orgType" name="org_type">
+                <option value="" disabled selected>Select your organization type…</option>
+                <option value="small-business">Small Business</option>
+                <option value="private-practice">Private Practice</option>
+                <option value="healthcare-org">Healthcare Organization</option>
+                <option value="telehealth-startup">Telehealth Startup</option>
+                <option value="tech-company">Technology Company</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="service">Service of Interest</label>
+              <select id="service" name="service">
+                <option value="" disabled selected>Select a service…</option>
+                <option value="pm-consulting">Project Management Consulting</option>
+                <option value="healthcare-it">Healthcare IT / EHR Implementation</option>
+                <option value="sop-writing">Technical Writing &amp; SOPs</option>
+                <option value="workflow">Workflow Optimization</option>
+                <option value="rfp">RFP &amp; Proposal Writing</option>
+                <option value="database">Database &amp; Reporting</option>
+                <option value="courses">Online Courses &amp; Coaching</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project</label>
+              <textarea id="message" name="message" placeholder="Briefly describe your needs, timeline, and any challenges you're facing…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" id="submitBtn">
+              Send Consultation Request ↗
+            </button>
+            <div id="formMsg" style="margin-top:16px; font-size:0.9rem; text-align:center; display:none;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<?php
+get_footer();
