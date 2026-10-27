@@ -18,7 +18,7 @@ $contact_email = rms_get_contact_email();
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo-link" aria-label="<?php bloginfo('name'); ?> Home">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/logo.svg?v=5'); ?>" alt="<?php bloginfo('name'); ?> Logo" class="footer-logo-img" />
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/logo.svg?v=6'); ?>" alt="<?php bloginfo('name'); ?> Logo" class="footer-logo-img" />
           </a>
           <p>A modern, flexible, and cost-effective Business, Healthcare &amp; IT consulting firm—delivering compliant, scalable projects without the overhead.</p>
           <p style="margin-top: 14px;">

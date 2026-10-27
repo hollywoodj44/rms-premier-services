@@ -52,13 +52,10 @@ Under **Consultations → Settings**:
 
 ---
 
-## ❓ Answering Your Question: Did We Need Web3Forms Like DS Nutra?
+## ⚡ Email Delivery via Web3Forms (Now Active)
 
-On the **DS Nutra** website, we used **Web3Forms** (`api.web3forms.com` with an access key) because that was a static HTML site without a backend server to process emails.
+The theme is now directly integrated with **Web3Forms API** using your access key (`e25a9b5c-b5e5-435f-83a1-a9292dd1819b`):
 
-**For this WordPress site, you DO NOT need Web3Forms or any paid forwarding service:**
-- WordPress already has its own backend and email engine (`wp_mail`).
-- It saves all inquiries directly into your WordPress dashboard and dispatches emails directly to your business address.
-
-> 💡 **Deliverability Tip for WordPress:**
-> By default, WordPress uses standard PHP mail from your web hosting server. To ensure your consultation emails never land in your spam folder, we recommend installing the free **WP Mail SMTP** plugin (available under *Plugins → Add New* in WordPress). You can connect it to Google Workspace, Microsoft 365, or your host SMTP in less than 2 minutes for 100% inbox deliverability.
+- **Zero SMTP / Server Hassle**: Form submissions bypass WordPress `wp_mail` host restrictions entirely and deliver directly to your inbox.
+- **Client-Side AJAX**: Includes loading indicator (`"Sending..."`), instant user alerts, anti-spam honeypot & botcheck, and automatic form resets.
+- **Works Everywhere**: Submissions work consistently whether run on WordPress, local previews, or static landing pages.

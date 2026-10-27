@@ -416,8 +416,12 @@ $contact_email = rms_get_contact_email();
 
         <div class="contact-form reveal">
           <h3 style="font-family:'Outfit',sans-serif; font-size:1.3rem; font-weight:700; color:var(--white); margin-bottom:28px;">Request a Consultation</h3>
-          <form id="contactForm" novalidate>
-            <!-- Anti-Spam Honeypot Field -->
+          <form id="form" novalidate>
+            <!-- Web3Forms Configuration & Anti-Spam -->
+            <input type="hidden" name="access_key" value="e25a9b5c-b5e5-435f-83a1-a9292dd1819b" />
+            <input type="hidden" name="subject" value="New Consultation Request — RMS Premier Services" />
+            <input type="hidden" name="from_name" value="RMS Premier Services Website" />
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;" />
             <input type="text" name="rms_hp" class="rms-hp" tabindex="-1" autocomplete="off" />
 
             <div class="form-row">

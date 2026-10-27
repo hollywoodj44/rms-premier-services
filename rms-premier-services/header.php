@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) {
   <nav id="navbar">
     <div class="container nav-inner">
       <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-logo" aria-label="<?php bloginfo('name'); ?> Home">
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/logo.svg?v=5'); ?>" alt="<?php bloginfo('name'); ?> Logo" class="nav-logo-img" />
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/logo.svg?v=6'); ?>" alt="<?php bloginfo('name'); ?> Logo" class="nav-logo-img" />
       </a>
       <div class="nav-links">
         <a href="<?php echo is_front_page() ? '#about' : esc_url(home_url('/#about')); ?>">About</a>

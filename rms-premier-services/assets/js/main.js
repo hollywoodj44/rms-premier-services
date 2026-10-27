@@ -77,76 +77,75 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // ── 5. AJAX Consultation Form Submission ──────────────
-  const contactForm = document.getElementById('contactForm');
-  const submitBtn   = document.getElementById('submitBtn');
-  const formMsg     = document.getElementById('formMsg');
+  // ── 5. Web3Forms Submission ─────────────────────────
+  const form = document.getElementById('form') || document.getElementById('contactForm');
 
-  if (contactForm && submitBtn && formMsg) {
-    contactForm.addEventListener('submit', async (e) => {
+  if (form) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Basic client-side validation
-      const firstName = document.getElementById('firstName')?.value.trim();
-      const lastName  = document.getElementById('lastName')?.value.trim();
-      const email     = document.getElementById('email')?.value.trim();
-      const message   = document.getElementById('message')?.value.trim();
+      const formData = new FormData(form);
+      formData.set("access_key", "e25a9b5c-b5e5-435f-83a1-a9292dd1819b");
 
-      if (!firstName || !lastName || !email || !message) {
-        formMsg.className = 'form-msg-error';
-        formMsg.textContent = 'Please fill out all required fields (Name, Email, and Project Description).';
-        formMsg.style.display = 'block';
-        return;
+      const firstName = formData.get("first_name") || "";
+      const lastName  = formData.get("last_name") || "";
+      if (!formData.get("name") && (firstName || lastName)) {
+        formData.set("name", `${firstName} ${lastName}`.trim());
       }
 
-      // Enter loading state
+      // Convert to clean JSON object to guarantee single-string fields
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = "Sending...";
       submitBtn.disabled = true;
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Sending Consultation Request…';
-      formMsg.style.display = 'none';
 
-      // Prepare form data for WordPress admin-ajax.php
-      const formData = new FormData(contactForm);
-      formData.append('action', 'rms_submit_consultation');
-
-      // Use localized nonce from WordPress if available
-      if (typeof rmsData !== 'undefined' && rmsData.nonce) {
-        formData.append('nonce', rmsData.nonce);
-      }
-
-      const ajaxEndpoint = (typeof rmsData !== 'undefined' && rmsData.ajaxUrl)
-        ? rmsData.ajaxUrl
-        : '/wp-admin/admin-ajax.php';
+      const formMsg = document.getElementById('formMsg');
+      if (formMsg) formMsg.style.display = 'none';
 
       try {
-        const response = await fetch(ajaxEndpoint, {
-          method: 'POST',
-          body: formData,
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
           headers: {
-            'X-Requested-With': 'XMLHttpRequest'
-          }
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: json
         });
 
-        const result = await response.json();
+        const data = await response.json();
 
-        if (result && result.success) {
-          formMsg.className = 'form-msg-success';
-          formMsg.textContent = result.data?.message || '✓ Thank you! Your consultation request has been sent. We\'ll be in touch within 24 business hours.';
-          formMsg.style.display = 'block';
-          contactForm.reset();
+        if (response.ok && data.success) {
+          alert("Success! Your message has been sent.");
+          if (formMsg) {
+            formMsg.className = 'form-msg-success';
+            formMsg.textContent = '✓ Success! Your message has been sent.';
+            formMsg.style.display = 'block';
+          }
+          form.reset();
         } else {
-          const errMsg = result.data?.message || 'Something went wrong. Please email us directly at sthomas@rmspremierservices.com.';
+          alert("Error: " + (data.message || "Failed to send message."));
+          if (formMsg) {
+            formMsg.className = 'form-msg-error';
+            formMsg.textContent = 'Error: ' + (data.message || "Failed to send message.");
+            formMsg.style.display = 'block';
+          }
+        }
+
+      } catch (error) {
+        alert("Something went wrong. Please try again.");
+        if (formMsg) {
           formMsg.className = 'form-msg-error';
-          formMsg.textContent = errMsg;
+          formMsg.textContent = 'Something went wrong. Please try again.';
           formMsg.style.display = 'block';
         }
-      } catch (err) {
-        formMsg.className = 'form-msg-error';
-        formMsg.textContent = 'Network or server error. Please email us directly at sthomas@rmspremierservices.com.';
-        formMsg.style.display = 'block';
       } finally {
+        submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
       }
     });
   }

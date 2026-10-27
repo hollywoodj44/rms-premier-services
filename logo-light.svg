@@ -1,14 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 58" fill="none" width="420" height="58">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" fill="none" width="260" height="48">
   <defs>
     <!-- Brand Gradients -->
     <linearGradient id="rms-indigo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4F46E5" />
-      <stop offset="100%" stop-color="#312E81" />
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="50%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#3730A3" />
     </linearGradient>
 
     <linearGradient id="rms-violet-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#9333EA" />
-      <stop offset="100%" stop-color="#581C87" />
+      <stop offset="100%" stop-color="#6B21A8" />
     </linearGradient>
 
     <linearGradient id="rms-cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -17,55 +18,57 @@
     </linearGradient>
 
     <linearGradient id="rms-amber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="0%" stop-color="#F59E0B" />
       <stop offset="100%" stop-color="#B45309" />
     </linearGradient>
 
     <linearGradient id="rms-tile-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="100%" stop-color="#EEF2F6" />
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#0F172A" />
     </linearGradient>
 
     <linearGradient id="rms-tile-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#C7D2FE" />
-      <stop offset="100%" stop-color="#E2E8F0" />
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#9333EA" stop-opacity="0.6" />
     </linearGradient>
 
     <filter id="rms-badge-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#4F46E5" flood-opacity="0.12"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#4338CA" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="rms-star-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#F59E0B" flood-opacity="0.6"/>
     </filter>
   </defs>
 
-  <!-- ═══════════ EMBLEM MARK (48x48) ═══════════ -->
-  <g transform="translate(2, 5)">
-    <rect x="0" y="0" width="48" height="48" rx="13" fill="url(#rms-tile-bg)" stroke="url(#rms-tile-border)" stroke-width="1.25" filter="url(#rms-badge-glow)"/>
+  <!-- ═══════════ EMBLEM MARK (44x44) ═══════════ -->
+  <g transform="translate(2, 2)">
+    <rect x="0" y="0" width="44" height="44" rx="12" fill="url(#rms-tile-bg)" stroke="url(#rms-tile-border)" stroke-width="1.25" filter="url(#rms-badge-glow)"/>
 
-    <rect x="12" y="13.5" width="4.75" height="22" rx="2.375" fill="#6366F1"/>
+    <rect x="11" y="12" width="4.5" height="20" rx="2.25" fill="#818CF8"/>
 
-    <path d="M 15.5 16 H 24 C 28.2 16 31 18.5 31 22 C 31 25.5 28.2 28 24 28 H 15.5" 
-          stroke="url(#rms-indigo-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M 14.5 14.5 H 22 C 25.8 14.5 28.5 17 28.5 20.25 C 28.5 23.5 25.8 26 22 26 H 14.5" 
+          stroke="#818CF8" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 
-    <path d="M 21 27 L 25 31.5 L 30 23.5 L 36 15.5" 
-          stroke="url(#rms-cyan-grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    
-    <circle cx="36" cy="15.5" r="2.3" fill="#0284C7"/>
+    <path d="M 19 25 L 23 29.5 L 28 21.5 L 33.5 14" 
+          stroke="#38BDF8" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="33.5" cy="14" r="2.2" fill="#38BDF8"/>
 
-    <path d="M 23.5 34.5 C 28 34.5 33.5 34 33.5 30.5 C 33.5 27.5 27 27.5 27 24.5 C 27 22 31 21.2 33.5 22.2" 
-          stroke="url(#rms-violet-grad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 21.5 32 C 26 32 31 31.5 31 28.5 C 31 25.8 25 25.5 25 22.8 C 25 20.5 28.5 19.8 31 20.8" 
+          stroke="#C084FC" stroke-width="2.4" stroke-linecap="round" fill="none"/>
 
-    <path d="M 38.5 7 C 38.5 9 40 10.2 41.8 10.2 C 40 10.2 38.5 11.5 38.5 13.5 C 38.5 11.5 37 10.2 35.2 10.2 C 37 10.2 38.5 9 38.5 7 Z" 
-          fill="url(#rms-amber-grad)"/>
+    <path d="M 35 6 C 35 7.8 36.3 9 38 9 C 36.3 9 35 10.2 35 12 C 35 10.2 33.7 9 32 9 C 33.7 9 35 7.8 35 6 Z" 
+          fill="url(#rms-amber-grad)" filter="url(#rms-star-glow)"/>
   </g>
 
   <!-- ═══════════ TYPOGRAPHY (Optimized for Light Backgrounds) ═══════════ -->
-  <g transform="translate(64, 0)">
-    <text x="0" y="29" font-family="'Outfit', 'Inter', system-ui, -apple-system, sans-serif" font-weight="900" font-size="26" letter-spacing="-0.02em">
-      <tspan fill="#0F172A">RMS</tspan><tspan fill="url(#rms-indigo-grad)" font-weight="700">Premier</tspan><tspan fill="url(#rms-amber-grad)" font-size="28" font-weight="900">.</tspan>
+  <g transform="translate(56, 0)">
+    <text x="0" y="27" font-family="'Outfit', 'Inter', system-ui, -apple-system, sans-serif" font-weight="900" font-size="21.5" letter-spacing="-0.02em">
+      <tspan fill="#0F172A">RMS</tspan><tspan fill="url(#rms-indigo-grad)" font-weight="700">Premier</tspan><tspan fill="url(#rms-amber-grad)" font-size="24" font-weight="900">.</tspan>
     </text>
 
-    <!-- Subtitle: SERVICES | HEALTHCARE & IT PM -->
-    <text x="0.5" y="49" font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="900" font-size="15" letter-spacing="0.05em">
-      <tspan fill="#0F172A">SERVICES</tspan> <tspan fill="#6366F1" font-weight="600">|</tspan> <tspan fill="#1E293B" font-weight="800">HEALTHCARE &amp; IT PM</tspan>
+    <text x="0.5" y="41" font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="700" font-size="8" letter-spacing="0.2em" fill="#64748B">
+      SERVICES <tspan fill="#6366F1" font-weight="400">|</tspan> <tspan fill="#334155">HEALTHCARE &amp; IT PM</tspan>
     </text>
   </g>
 </svg>
